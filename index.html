@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha Personal - Manuel Gallina</title>
+    <title>Ficha Personal - Juan Carlos Pérez Gonzáles</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
+    <header class="ficha-header">
         <h1>Ficha Personal</h1>
         <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
             <span class="icon">🌙</span>
@@ -16,79 +16,78 @@
     </header>
 
     <main class="container">
-        <section class="personal-info">
+        
+        <section class="profile-main">
             <div class="photo-container">
-                <img src="IMG/foto carnet (5).jpeg" alt="Foto de Manuel Gallina" class="profile-photo">
+                <img src="IMG/foto carnet (5).jpeg" alt="Foto de Juan Carlos Pérez Gonzáles" class="profile-photo">
             </div>
             
-            <div class="info-container">
-                <h2 class="student-name">Manuel Gallina</h2>
-                
-                <div class="data-group">
-                    <div class="data-item">
-                        <span class="label">Nº de Legajo:</span>
-                        <span class="value">1210857</span>
-                    </div>
-                    
-                    <div class="data-item">
-                        <span class="label">Carrera:</span>
-                        <span class="value">Licenciatura en Gestión de Tecnología de la Información</span>
-                    </div>
-                    
-                    <div class="data-item">
-                        <span class="label">Materia:</span>
-                        <span class="value">Diseño y Desarrollo Web</span>
-                    </div>
-                    
-                    <div class="data-item">
-                        <span class="label">Año:</span>
-                        <span class="value">2025</span>
-                    </div>
-                    
-                    <div class="data-item">
-                        <span class="label">Cuatrimestre:</span>
-                        <span class="value">Segundo</span>
-                    </div>
-                </div>
+            <h2 class="student-name">Juan Carlos Pérez Gonzáles</h2>
+        </section>
+
+        <section class="personal-data-grid">
+            
+            <div class="data-pair">
+                <span class="label">Nombre Completo</span>
+                <span class="value-box">Juan Carlos Pérez Gonzáles</span>
             </div>
+            
+            <div class="data-pair">
+                <span class="label">Nro de Legajo</span>
+                <span class="value-box">11600500</span>
+            </div>
+            
+            <div class="data-pair">
+                <span class="label">Materia</span>
+                <span class="value-box">Diseño y desarrollo Web</span>
+            </div>
+            
+            <div class="data-pair">
+                <span class="label">Cursso</span>
+                <span class="value-box">536117</span>
+            </div>
+            
         </section>
         
-        <hr class="divider">
-
         <section class="projects">
-            <h2 class="section-title">✨ Proyectos Desarrollados</h2>
             
             <div class="card-container">
+                
                 <div class="project-card">
                     <div class="card-image">
-                        <img src="IMG/jesse.jpeg" alt="Fan Page Breaking Bad">
+                        <img src="IMG/jesse.jpeg" alt="Fan page DR. HOUSE FANS">
                     </div>
                     <div class="card-content">
-                        <h3>Fan Page</h3>
-                        <p class="project-description">Ficha de Personaje - Breaking Bad (Jesse Pinkman)</p>
-                        <a href="https://manugallina014.github.io/tpPaginaSerie/" target="_blank" class="project-link">Ver Proyecto →</a>
+                        <h3>Fan page</h3>
+                        <div class="project-links-group">
+                            <a href="#" class="project-link-badge">Repositorio</a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="card-image">
-                        <img src="IMG/tecnoG.png" alt="Local Comercial TecnoG">
+                        <img src="IMG/tecnoG.png" alt="Local comercial">
                     </div>
                     <div class="card-content">
-                        <h3>Local Comercial</h3>
-                        <p class="project-description">E-commerce de Electrodomésticos - TecnoG Real</p>
-                        <a href="https://manugallina014.github.io/TPparcialDise-oWeb/" target="_blank" class="project-link">Ver Proyecto →</a>
+                        <h3>Local comercial</h3>
+                        <div class="project-links-group">
+                            <a href="#" class="project-link-badge">Repositorio</a>
+                            <a href="#" class="project-link-badge">Documentación</a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="card-image">
-                        <img src="IMG/LILabasto.png" alt="Shopping Lil Abasto">
+                        <img src="IMG/LILabasto.png" alt="Centro comercial">
                     </div>
                     <div class="card-content">
-                        <h3>Sitio Grupal del Centro Comercial</h3>
-                        <p class="project-description">Shopping Lil Abasto - Proyecto Final Grupal</p>
-                        <a href="https://fedesorii.github.io/DyDW-TpLilAbasto/" target="_blank" class="project-link">Ver Proyecto →</a>
+                        <h3>Centro comercial</h3>
+                        <div class="project-links-group">
+                            <a href="#" class="project-link-badge">Repositorio</a>
+                            <a href="#" class="project-link-badge">Documentación</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +95,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Manuel Gallina - UADE - Diseño y Desarrollo Web</p>
+        <p>© 2025 Todos los derechos reservados</p>
     </footer>
 
  <script src="script.js"></script>

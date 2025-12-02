@@ -1,33 +1,29 @@
 /* VARIABLES DE COLORES */
 :root {
-    /* Modo Claro */
-    --bg-primary: #f4f7f6;
-    --bg-secondary: #ffffff;
+    /* Colores de la Imagen Target */
+    --color-orange: #FF8C00; /* Naranja/Amarillo fuerte del Header */
+    --color-purple: #9933CC; /* Color Morado de Acentos (Bordes, Etiquetas) */
+    
+    /* Modo Claro (Simulando el fondo de la imagen) */
+    --bg-primary: #f8f8f8; /* Fondo principal (casi blanco) */
+    --bg-secondary: #ffffff; /* Fondo de las tarjetas y cajas de valor */
     --text-primary: #333333;
     --text-secondary: #7f8c8d;
-    --accent-color: #3498db;
-    --accent-hover: #2980b9;
-    --header-bg: #2c3e50;
     --border-color: #ecf0f1;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --shadow-hover: rgba(0, 0, 0, 0.2);
+    --shadow: rgba(0, 0, 0, 0.08); /* Sombra más sutil */
 }
 
 [data-theme="dark"] {
-    /* Modo Oscuro */
+    /* Modo Oscuro (Mantenemos tu esquema, pero con los nuevos acentos) */
     --bg-primary: #1a1a1a;
     --bg-secondary: #2d2d2d;
     --text-primary: #e0e0e0;
     --text-secondary: #a0a0a0;
-    --accent-color: #3498db;
-    --accent-hover: #5dade2;
-    --header-bg: #1a1a1a;
     --border-color: #404040;
     --shadow: rgba(0, 0, 0, 0.3);
-    --shadow-hover: rgba(0, 0, 0, 0.5);
 }
 
-/* RESET Y CONFIGURACIÓN BASE */
+/* RESET Y CONFIGURACIÓN BASE (Se mantienen igual) */
 * {
     margin: 0;
     padding: 0;
@@ -49,269 +45,230 @@ body {
     padding: 40px 20px;
 }
 
-/* HEADER Y BOTÓN DE TEMA */
+/* ================================================= */
+/* 1. HEADER Y BOTÓN DE TEMA (Estilo de la Imagen) */
+/* ================================================= */
+
 header {
-    background-color: var(--header-bg);
+    background-color: var(--color-orange); /* Fondo naranja del target */
     color: white;
     padding: 20px 0;
-    text-align: center;
+    text-align: left; /* Alineación del título a la izquierda */
     box-shadow: 0 4px 6px var(--shadow);
     position: relative;
     transition: background-color 0.3s ease;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2em;
+    margin-left: 50px; /* Separación del borde izquierdo */
+    font-size: 1.8em;
+    font-weight: 500; /* Fuente no tan pesada como antes */
 }
 
+/* Modificación del botón para que parezca solo un icono en la esquina */
 .theme-toggle {
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--accent-color);
+    background: none; /* Quitamos el fondo azul */
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
     cursor: pointer;
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px var(--shadow);
+    font-size: 2em; /* Ícono más grande */
+    color: white; /* Color del icono */
+    padding: 0;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    transition: none;
 }
 
 .theme-toggle:hover {
-    background-color: var(--accent-hover);
+    background: none;
     transform: translateY(-50%) scale(1.1);
 }
 
-.theme-toggle .icon {
-    transition: transform 0.3s ease;
-}
 
-.theme-toggle:active .icon {
-    transform: rotate(20deg);
-}
+/* ================================================= */
+/* 2. SECCIÓN DE INFORMACIÓN PERSONAL (Estilo de la Imagen) */
+/* ================================================= */
 
-/* SECCIÓN DE INFORMACIÓN PERSONAL */
-.personal-info {
+/* Contenedor principal para la foto y el nombre */
+.profile-main {
     display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 40px;
-    background-color: var(--bg-secondary);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px var(--shadow);
-    margin-bottom: 30px;
-    transition: background-color 0.3s ease;
-}
-
-.photo-container {
-    flex-shrink: 0;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0 40px 0; /* Padding superior e inferior */
+    margin-bottom: 20px;
+    /* Se elimina el estilo de caja blanca y sombra que tenía .personal-info */
 }
 
 .profile-photo {
-    width: 180px !important;
-    height: 180px !important;
-    max-width: 180px !important;
-    max-height: 180px !important;
+    width: 100px !important;
+    height: 100px !important;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--accent-color);
-    box-shadow: 0 4px 12px var(--shadow);
+    border: 3px solid var(--color-purple); /* Borde morado */
     display: block;
-}
-
-.info-container {
-    flex: 1;
+    box-shadow: 0 0 0 2px rgba(153, 51, 204, 0.3); /* Sombra suave para el borde */
 }
 
 .student-name {
-    color: var(--accent-color);
-    margin-bottom: 20px;
+    color: var(--text-primary);
+    margin: 0;
     font-size: 2em;
+    font-weight: 600; /* Más destacado */
 }
 
-.data-group {
+/* Contenedor de la cuadrícula de datos */
+.personal-data-grid {
+    display: grid;
+    /* Dos columnas de igual ancho */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    margin-bottom: 40px;
+    /* En móviles, vuelve a una columna */
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.data-pair {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    /* Estilo para los pares de datos */
 }
 
-.data-item {
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    background-color: var(--bg-primary);
-    border-radius: 8px;
-    transition: transform 0.2s ease;
-}
-
-.data-item:hover {
-    transform: translateX(5px);
-}
-
-.data-item .label {
+.data-pair .label {
     font-weight: bold;
-    color: var(--text-secondary);
-    min-width: 140px;
-    font-size: 0.95em;
+    color: var(--color-purple); /* Etiqueta en morado */
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
 }
 
-.data-item .value {
+.data-pair .value-box {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    border-radius: 4px;
     color: var(--text-primary);
-    font-size: 1.05em;
+    font-size: 1.1em;
+    font-weight: 500;
+    box-shadow: inset 0 1px 3px var(--shadow); /* Sombra interna sutil */
 }
 
 .divider {
-    border: none;
-    border-top: 2px solid var(--border-color);
-    margin: 40px 0;
+    /* Se mantiene el divisor, aunque en la imagen parece ausente */
+    display: none; 
 }
 
-/* SECCIÓN DE PROYECTOS */
+
+/* ================================================= */
+/* 3. SECCIÓN DE PROYECTOS (Estilo de la Imagen) */
+/* ================================================= */
+
 .projects {
+    /* Eliminamos el título central, ya que no está en la imagen */
     padding-top: 20px;
 }
 
 .section-title {
-    text-align: center;
-    color: var(--accent-color);
-    margin-bottom: 40px;
-    font-size: 2em;
+    display: none; /* Ocultar el título de la sección */
 }
 
 .card-container {
-    display: grid;
+    /* Se mantiene el grid de 3 columnas (o más pequeñas si es necesario) */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    justify-content: center;
+    gap: 25px;
 }
 
 .project-card {
-    background-color: var(--bg-secondary);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px var(--shadow);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px var(--shadow-hover);
+    border-radius: 8px; /* Bordes más redondeados */
+    box-shadow: 0 2px 10px var(--shadow); /* Sombra más sutil */
+    text-align: center; /* Centramos el texto de la tarjeta */
 }
 
 .card-image {
-    height: 200px;
-    overflow: hidden;
-    background-color: var(--border-color);
-}
-
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover .card-image img {
-    transform: scale(1.05);
+    height: 250px; /* Imagen más alta */
+    border-radius: 8px 8px 0 0;
 }
 
 .card-content {
-    padding: 25px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 15px; /* Menos padding */
 }
 
 .card-content h3 {
-    color: var(--accent-color);
-    margin-bottom: 12px;
-    font-size: 1.3em;
+    color: var(--text-primary); /* Título en color principal, no morado */
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
+/* Eliminamos la descripción (ya se quitó del HTML) */
 .project-description {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-    flex: 1;
-    font-size: 0.95em;
+    display: none;
 }
 
-.project-link {
+/* Estilo para los "badges" de Repositorio/Documentación */
+.project-links-group {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.project-link-badge {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    color: var(--text-secondary); /* Texto gris */
+    padding: 5px 10px;
+    border-radius: 4px;
     text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
+    font-size: 0.75em;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
 }
 
-.project-link:hover {
-    background-color: var(--accent-hover);
-    transform: translateX(5px);
+.project-link-badge:hover {
+    background-color: #e0e0e0;
+    color: var(--text-primary);
 }
 
-/* FOOTER */
+/* Eliminamos el estilo anterior del link grande */
+.project-link {
+    display: none;
+}
+
+
+/* ================================================= */
+/* 4. FOOTER (Estilo de la Imagen) */
+/* ================================================= */
+
 footer {
     text-align: center;
     padding: 30px 0;
-    margin-top: 60px;
-    border-top: 2px solid var(--border-color);
+    margin-top: 30px;
+    /* Quitamos el border-top que no se ve en la imagen */
+    border-top: none; 
     color: var(--text-secondary);
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
-/* RESPONSIVE */
+
+/* RESPONSIVE (Ajustes para que se vea bien en móvil) */
 @media (max-width: 768px) {
-    .personal-info {
+    .profile-main {
         flex-direction: column;
-        text-align: center;
         align-items: center;
-        padding: 30px 20px;
-    }
-    
-    .profile-photo {
-        width: 150px;
-        height: 150px;
     }
     
     .student-name {
-        font-size: 1.5em;
+        font-size: 1.8em;
     }
     
-    .data-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 5px;
-    }
-    
-    .data-item .label {
-        min-width: auto;
-    }
-    
-    .card-container {
+    .personal-data-grid {
+        /* Fuerza a una columna en móviles */
         grid-template-columns: 1fr;
-    }
-    
-    .theme-toggle {
-        right: 10px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.3em;
-    }
-    
-    header h1 {
-        font-size: 1.5em;
-        padding-right: 60px;
     }
 }
