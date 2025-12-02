@@ -179,3 +179,10 @@ footer {
         display: block;
     }
 }
+:root {
+    --bg-primary: #f4f7f6;  /* Colores modo claro */
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;  /* Colores modo oscuro */
+}

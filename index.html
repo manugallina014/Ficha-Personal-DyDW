@@ -4,71 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha Personal - Manuel Gallina</title>
-    <link rel="stylesheet" href="styles.css"> </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 
     <header>
         <h1>Ficha Personal</h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+            <span class="icon">🌙</span>
+        </button>
     </header>
 
     <main class="container">
         <section class="personal-info">
-            <div class="photo-placeholder">
-    <img src="IMG/foto carnet (5).jpeg" alt="Foto de Manuel Gallina">
-</div>
-            <div class="details">
-                <h2>Manuel Gallina</h2>
+            <div class="photo-container">
+                <img src="IMG/foto carnet (5).jpeg" alt="Foto de Manuel Gallina" class="profile-photo">
+            </div>
+            
+            <div class="info-container">
+                <h2 class="student-name">Manuel Gallina</h2>
                 
-                <div class="data-item">
-                    <strong>Nº de Legajo:</strong> <span>1210857</span>
+                <div class="data-group">
+                    <div class="data-item">
+                        <span class="label">Nº de Legajo:</span>
+                        <span class="value">1210857</span>
+                    </div>
+                    
+                    <div class="data-item">
+                        <span class="label">Carrera:</span>
+                        <span class="value">Licenciatura en Gestión de Tecnología de la Información</span>
+                    </div>
+                    
+                    <div class="data-item">
+                        <span class="label">Materia:</span>
+                        <span class="value">Diseño y Desarrollo Web</span>
+                    </div>
+                    
+                    <div class="data-item">
+                        <span class="label">Año:</span>
+                        <span class="value">2025</span>
+                    </div>
+                    
+                    <div class="data-item">
+                        <span class="label">Cuatrimestre:</span>
+                        <span class="value">Segundo</span>
+                    </div>
                 </div>
-                
-                <div class="data-item">
-                    <strong>Materia:</strong> <span>Diseño y desarrollo web</span>
-                </div>
-                
-                <div class="data-item">
-                    <strong>Nº de Curso:</strong> <span></span> </div>
             </div>
         </section>
         
-        <hr>
+        <hr class="divider">
 
         <section class="projects">
-            <h2>✨ Mis Proyectos</h2>
+            <h2 class="section-title">✨ Proyectos Desarrollados</h2>
+            
             <div class="card-container">
-                
                 <div class="project-card">
-                    <div class="card-image-placeholder">
-                        <img src="IMG/jesse.jpeg" alt="Jesse">
-                        </div>
-                    <h3>TP 1: Ficha de Personaje (Breaking Bad)</h3>
-                    <a href="https://manugallina014.github.io/tpPaginaSerie/" target="_blank" class="project-link">Ver Proyecto</a>
+                    <div class="card-image">
+                        <img src="IMG/jesse.jpeg" alt="Fan Page Breaking Bad">
+                    </div>
+                    <div class="card-content">
+                        <h3>Fan Page</h3>
+                        <p class="project-description">Ficha de Personaje - Breaking Bad (Jesse Pinkman)</p>
+                        <a href="https://manugallina014.github.io/tpPaginaSerie/" target="_blank" class="project-link">Ver Proyecto →</a>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="card-image-placeholder">
-                         <img src="IMG/tecnoG.png" alt="tecnoG">
-                        </div>
-                    <h3>TP 2: E-commerce de Electrodomésticos</h3>
-                    <a href="https://manugallina014.github.io/TPparcialDise-oWeb/" target="_blank" class="project-link">Ver Proyecto</a>
+                    <div class="card-image">
+                        <img src="IMG/tecnoG.png" alt="Local Comercial TecnoG">
+                    </div>
+                    <div class="card-content">
+                        <h3>Local Comercial</h3>
+                        <p class="project-description">E-commerce de Electrodomésticos - TecnoG Real</p>
+                        <a href="https://manugallina014.github.io/TPparcialDise-oWeb/" target="_blank" class="project-link">Ver Proyecto →</a>
+                    </div>
                 </div>
                 
                 <div class="project-card">
-                    <div class="card-image-placeholder">
-                         <img src="IMG/LILabasto.png" alt="LILabasto">
-                        </div>
-                    <h3>TP Final: Shopping Lil Abasto</h3>
-                    <a href="https://fedesorii.github.io/DyDW-TpLilAbasto/" target="_blank" class="project-link">Ver Proyecto</a>
+                    <div class="card-image">
+                        <img src="IMG/LILabasto.png" alt="Shopping Lil Abasto">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sitio Grupal del Centro Comercial</h3>
+                        <p class="project-description">Shopping Lil Abasto - Proyecto Final Grupal</p>
+                        <a href="https://fedesorii.github.io/DyDW-TpLilAbasto/" target="_blank" class="project-link">Ver Proyecto →</a>
+                    </div>
                 </div>
-
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Manuel Gallina. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Manuel Gallina - UADE - Diseño y Desarrollo Web</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
